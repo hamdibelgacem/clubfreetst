@@ -6,3 +6,13 @@ body {
 a {
   color: #00B7FF;
 }
+
+#result{
+  display: none;
+}
+
+#notes>li{
+  position: relative;
+  cursor: pointer;
+}
+

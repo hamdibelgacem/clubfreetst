@@ -5,7 +5,30 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+
+    <h1>Search for blogs</h1>
+
+    <form action="" method="get">
+      <div>
+        <label for="blogID">
+          blogID :
+          <input id="blogID" name="blogID"/>
+        </label>
+      </div>
+      <button id="search" type="submit">search</button>
+    </form>
+
+    <ul id="result">
+      <li>blogger : <span id="blogger"></span></li>
+      <li>title : <span id="title"></span></li>
+      <ul id="notes">
+        <li></li>
+      </ul>
+    </ul>
+
+
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/blogs.js"></script>
+
   </body>
 </html>
