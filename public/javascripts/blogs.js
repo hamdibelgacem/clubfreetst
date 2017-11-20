@@ -29,8 +29,32 @@ $(document).ready(function () {
                 $("#notes").html(list);
             });
 
+        }
+    });
 
 
+    /**
+     * Description: Attach a handler to one or more events for all elements that match the selector,
+     * now or in the future, based on a specific set of root elements.
+     * */
+    $("#notes").delegate("li", "click", function () {
+        console.log("delete note : "+$(this).attr('id'));
+        var $noteID= $(this).attr('id');
+        var $item= $(this);
+        /**
+         * Ajax Delete note
+         * */
+        $.ajax({
+            url: baseUrl+"notes/"+$noteID,
+            type: 'DELETE',
+            success: done,
+        });
+        function done(data){
+            console.log(data);
+            if(data && data.err)
+                alert(data.err);
+            if(data && !data.err)
+                $item.remove();
         }
     });
 
