@@ -11,9 +11,15 @@ $(document).ready(function () {
         $("#result").css({
             display: "none",
         });
+        $("#blogID").removeClass("valid");
+        $("#blogID").removeClass("invalid");
+
 
         var $blogID = $("#blogID").val();
         if($blogID.length >= 5 && $blogID.length <= 7){
+
+            $("#blogID").addClass("valid");
+
             /**
              * Ajax Jquery
              * */
@@ -42,6 +48,9 @@ $(document).ready(function () {
 
             });
 
+        }else{
+            $("#blogID").addClass("invalid")
+            alert("blogID is invalid (5-7 digits)");
         }
     });
 

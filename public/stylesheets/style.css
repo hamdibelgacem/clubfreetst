@@ -46,3 +46,10 @@ form{
   margin-right: auto;
   width: 370px;
 }
+
+input.valid{
+  border-color: green;
+}
+input.invalid{
+  border-color: #d9534f;
+}
