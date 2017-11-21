@@ -2,29 +2,37 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
     <link rel='stylesheet' href='/stylesheets/style.css' />
+
+
   </head>
   <body>
 
-    <h1>Search for blogs</h1>
+    <div class="content">
+      <h1>Search for blogs</h1>
 
-    <form action="" method="get">
-      <div>
-        <label for="blogID">
-          blogID :
-          <input id="blogID" name="blogID"/>
-        </label>
-      </div>
-      <button id="search" type="submit">search</button>
-    </form>
+      <form class="form-inline">
+        <div class="form-group">
+          <input id="blogID" name="blogID" class="form-control" placeholder="Enter blogID"/>
+        </div>
+        <button class="btn btn-primary" id="search" type="submit">search</button>
+      </form>
 
-    <ul id="result">
-      <li>blogger : <span id="blogger"></span></li>
-      <li>title : <span id="title"></span></li>
-      <ul id="notes">
-        <li></li>
+
+
+      <ul id="result">
+        <li><strong>blogger : </strong><em id="blogger"></em></li>
+        <li><strong>title : </strong><span id="title"></span></li>
+        <li>
+          <strong>notes :</strong>
+
+          <ul class="list-group" id="notes">
+            <li></li>
+          </ul>
+        </li>
       </ul>
-    </ul>
+    </div>
 
 
     <script src="/javascripts/jquery.min.js"></script>
